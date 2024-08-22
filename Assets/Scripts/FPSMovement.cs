@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class FPSMovement : MonoBehaviour
 {
-    private float speed = 4f;
+    /**
+     tipos de variaveis 
+    numerico: int - inteiros; float - frações
+    letras: string
+    boleano: bool
+    Vector3/2
+    Transform     
+     */
+    private float speed = 4f; 
     private Vector2 input;
     private Vector3 direction;
     private Transform cam;
     private Rigidbody rb;
-
 
     // Start is called before the first frame update
     void Start()
