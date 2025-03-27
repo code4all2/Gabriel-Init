@@ -17,7 +17,11 @@ public class FPSMovement : MonoBehaviour
     private Vector3 direction;
     private Transform cam;
     private Rigidbody rb;
+    private bool isJumping;
 
+    [SerializeField] LayerMask jumpLayer;
+    [SerializeField] float ray = 1.3f;
+    [SerializeField] float jumpForce = 50f;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +39,22 @@ public class FPSMovement : MonoBehaviour
         input.y = Input.GetAxis("Vertical");
 
         direction = input.x * Vector3.right + input.y * Vector3.forward;
+        direction = transform.transform.TransformDirection(direction);
         transform.Translate(direction * speed * Time.deltaTime, Space.World);
 
+        if (Input.GetButtonDown("Jump")  && Jump())
+        {
+            rb.velocity = Vector3.up * jumpForce;
+        }
+    }
+
+
+    private bool Jump()
+    {
+        RaycastHit hit;
+        Physics.Raycast(transform.position,Vector3.down, out hit, ray, jumpLayer);
+        isJumping = hit.collider;
+
+        return isJumping;
     }
 }

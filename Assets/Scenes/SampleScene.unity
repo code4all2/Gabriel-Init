@@ -580,7 +580,7 @@ CapsuleCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5000001
   m_Height: 2
@@ -700,6 +700,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 511f764555f5d464b8472bb5c33ecd55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  ray: 1.3
+  jumpForce: 50
 --- !u!54 &826505848
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -879,7 +884,7 @@ GameObject:
   - component: {fileID: 1091272165}
   - component: {fileID: 1091272164}
   - component: {fileID: 1091272163}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Chao
   m_TagString: Untagged
   m_Icon: {fileID: 0}
