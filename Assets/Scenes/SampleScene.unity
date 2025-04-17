@@ -714,8 +714,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f6d47c6acb4ab4f9efb041c20e8b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 2765068770487283937, guid: 80bb63b7ae44b9443855e54450785b91, type: 3}
-  bocaDaArma: {fileID: 528661668}
+  damage: 10
+  maxBullet: 10
+  range: 100
+  fireRate: 15
+  reloadTime: 1
 --- !u!1 &696974089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,8 +1519,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f6d47c6acb4ab4f9efb041c20e8b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 2765068770487283937, guid: 80bb63b7ae44b9443855e54450785b91, type: 3}
-  bocaDaArma: {fileID: 808320280}
+  damage: 10
+  maxBullet: 10
+  range: 100
+  fireRate: 15
+  reloadTime: 1
 --- !u!1 &1656343097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1595,8 +1601,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3f6d47c6acb4ab4f9efb041c20e8b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 2765068770487283937, guid: 80bb63b7ae44b9443855e54450785b91, type: 3}
-  bocaDaArma: {fileID: 696974090}
+  damage: 10
+  maxBullet: 10
+  range: 100
+  fireRate: 15
+  reloadTime: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
