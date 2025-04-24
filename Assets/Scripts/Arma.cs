@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class Arma : MonoBehaviour
-{    
+{
     Camera cam;
     [SerializeField] int damage = 10;
     [SerializeField] int maxBullet = 10;
@@ -14,18 +14,40 @@ public class Arma : MonoBehaviour
     int currentBullet;
     bool isReloading;
 
-   
+
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         cam = Camera.main;
+        currentBullet = maxBullet;
     }
 
+    private void OnEnable()
+    {
+        isReloading = false;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        // impedir de atirar se nao tiver bala
+        if (isReloading) return;
+
+        // carregar
+        if (currentBullet <= 0)
         {
+            if (Input.GetMouseButtonDown(1))
+                // pq ienumerator precisar ser executado com a startcoroutine
+                StartCoroutine(Reload());
+            return;
+        }
+
+        // atirar
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
+
             Shoot();
+            Debug.Log("balas: " + currentBullet);
         }
     }
 
@@ -35,7 +57,7 @@ public class Arma : MonoBehaviour
         Debug.Log("Está reloading...");
         yield return new WaitForSeconds(reloadTime);
         currentBullet = maxBullet;
-        isReloading=false;
+        isReloading = false;
     }
 
     void Shoot()

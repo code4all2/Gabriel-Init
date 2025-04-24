@@ -48,7 +48,6 @@ public class FPSMovement : MonoBehaviour
         }
     }
 
-
     private bool Jump()
     {
         RaycastHit hit;
