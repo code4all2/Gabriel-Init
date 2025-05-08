@@ -9,11 +9,11 @@ public class Arma : MonoBehaviour
     [SerializeField] float range = 100f;
     [SerializeField] float fireRate = 15f;
     [SerializeField] float reloadTime = 1f;
+    [SerializeField] ParticleSystem hitDamageVFX;
 
     float nextTimeToFire = 0f;
     int currentBullet;
     bool isReloading;
-
 
     void Start()
     {
@@ -72,6 +72,8 @@ public class Arma : MonoBehaviour
 
             // aplicar dano
             // efeito visuais
+            GameObject tempVFX = Instantiate(hitDamageVFX.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(tempVFX, 1f);
             // efeitos fisicos
         }
     }

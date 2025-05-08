@@ -6,7 +6,7 @@ public class FPSMovement : MonoBehaviour
 {
     /**
      tipos de variaveis 
-    numerico: int - inteiros; float - frações
+    numerico: int - inteiros; float - fraï¿½ï¿½es
     letras: string
     boleano: bool
     Vector3/2
@@ -44,7 +44,7 @@ public class FPSMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump")  && Jump())
         {
-            rb.velocity = Vector3.up * jumpForce;
+            rb.linearVelocity = Vector3.up * jumpForce;
         }
     }
 
