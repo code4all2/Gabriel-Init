@@ -50,7 +50,6 @@ public class Arma : MonoBehaviour
             Debug.Log("balas: " + currentBullet);
         }
     }
-
     IEnumerator Reload()
     {
         isReloading = true;

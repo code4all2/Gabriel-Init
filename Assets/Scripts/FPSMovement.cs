@@ -12,7 +12,7 @@ public class FPSMovement : MonoBehaviour
     Vector3/2
     Transform     
      */
-    private float speed = 4f; 
+    [SerializeField] private float speed = 4f; 
     private Vector2 input;
     private Vector3 direction;
     private Transform cam;
