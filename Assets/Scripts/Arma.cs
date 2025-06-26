@@ -70,8 +70,12 @@ public class Arma : MonoBehaviour
             Debug.Log(hit.transform.name);
 
             // aplicar dano
+            if(hit.collider.TryGetComponent<HealthManager>(out var healthManager)) {
+                healthManager.TakeDamage(damage);
+            }
             // efeito visuais
             GameObject tempVFX = Instantiate(hitDamageVFX.gameObject, hit.point, Quaternion.LookRotation(hit.normal));
+            tempVFX.gameObject.transform.SetParent(hit.transform);
             Destroy(tempVFX, 1f);
             // efeitos fisicos
         }
